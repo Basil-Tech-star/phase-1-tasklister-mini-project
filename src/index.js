@@ -21,12 +21,17 @@ function createTodo(todo, priority, dueDate)// function to create a new todo ite
   li.textContent = `${todo} (Due: ${dueDate})`;// set content of list item to include the todo and its due date
   li.appendChild(btn);// append the delete button to the list item
 
-  if (priority === "high"){
-    li.style.color = "red";// high priority task are red
-  }else if(priority === "medium"){
-    li.style.color = "yellow"; // medium priority tasks are yellow
-  }else if(priority === "low"){
-    li.style.color = "green"; // low priority tasks are green
+  // set color based on priority
+  switch (priority) {
+    case "high":
+      li.style.color = "red"; // High priority tasks are red
+      break;
+    case "medium":
+      li.style.color = "yellow"; // medium priority tasks are yellow
+      break;
+    case "low":
+      li.style.color = "green";// low priority tasks are green
+      break;
   }
   document.querySelector("#tasks").appendChild(li);// append list item to the task list in html
 }
